@@ -1,15 +1,12 @@
 <template>
     <div>
         <p v-html="rowHtml"></p>
-        <h2 v-once>{{ name }}</h2>
-        <h2 v-if="show">{{ name }}</h2>
-        <h2>{{ a+b }}</h2>
-        <h2>{{ ok?"Yes":"No" }}</h2>
-
-        <button v-on:click="updatetext">Click Here</button>
-        <button v-bind:disabled="disableBtn" v-on:click="updatetext">Click Here</button>
-        <!-- <Users />
-        <products /> -->
+        <h1 class="homestyle">Class and Style Component</h1>
+        <h1 v-bind:style="{color:colorKey}">Style Component</h1>
+        <h1 v-bind:style="{color:'blue'}">Style Component</h1>
+        <h1 v-bind:class="{display:show}">Class Bindings with object</h1>
+        <h1 v-bind:class="[aclass]">Class Bindings with Array</h1>
+        <h1 v-bind:class="[show?'yesShow':'noShow']">Class Bindings with Array</h1>
     </div>
 </template>
 <script>
@@ -21,33 +18,25 @@ export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name:'Home',
     data(){
-        return {
-            name:'Asif',
-            a:39,
-            b:11,
-            // eslint-disable-next-line no-undef
-            ok:false,
+        return {   
+            rowHtml:"<h1>Home Component</h1>", 
             show:true,
-            rowHtml:"<h1>Home Component</h1>",
-            disableBtn:true
-        }
-    },methods: {
-        updatetext(){
-            this.name="Shezan",
-            this.ok=!this.ok,
-            this.show=!this.show
+            aclass:'array',
+            colorKey:'red'
         }
     },
-//     components:{
-//     Users,
-//         Products,
-//     }
 };
 </script>
 
 <style scoped>
-    div{
+    .homestyle{
         background-color:rgb(218, 137, 232);
-        height: 500px;
+
+    }
+    .display{
+        background-color: burlywood;
+    }
+    .array{
+        background-color: cyan;
     }
 </style>
