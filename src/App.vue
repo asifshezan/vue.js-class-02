@@ -1,17 +1,19 @@
     <template>
     <div id="app">
-      <Home />
+      <h1>Data Binding in Vue Js</h1>
+      <DataBind />
     </div>
     </template>
 
   <script>
-  import Home from './components/Home.vue'
+
+import DataBind from './components/DataBind.vue';
 
   export default {
     name: 'App',
     components: {
-      Home
-            }
+    DataBind
+}
   };
   </script>
 
